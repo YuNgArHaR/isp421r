@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+
+{% load static %}
+    <main>
+      <div class="wrapper">
+        <h1 class="title">Вход</h1>
+        {% if user.is_authenticated %}
+                          {% else %}
+
+        <div class="new__line"></div>
+        <form class="login" method="post" action="{% url 'admin_login' %}">
+
+          {% csrf_token %}
+          <input
+            class="login__input"
+            name="username"
+            type="text"
+            placeholder="Имя пользователя"
+            required
+          />
+          <input
+            class="login__input"
+            name="password"
+            type="password"
+            placeholder="Пароль"
+            required
+          />
+          <input class="login__btn" type="submit" value="Вход" />
+        </form>
+        <p class="warning">Вход только для администраторов и редакторов!
+          <br>
+          <br>
+        Чтобы договориться о получении прав админа <a class="warning__link" href="https://t.me/isakycc">Писать сюда</a></p>
+        <div class="new__line"></div>
+        {% endif %}
+      </div>
+
+      <br />
+      <br />
+    </main>
+{% endblock %}

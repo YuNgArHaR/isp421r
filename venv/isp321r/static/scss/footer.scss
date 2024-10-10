@@ -1,0 +1,24 @@
+footer {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(21, 21, 21);
+  margin-top: auto;
+}
+
+.footer {
+  &__text-1 {
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+  &__text-2 {
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+}

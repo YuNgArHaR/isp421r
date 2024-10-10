@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+
+{% load static %}
+    <main>
+      <div class="wrapper">
+        <h1 class="title">Новости</h1>
+
+        {% for new in new %}
+        <div class="new">
+          <div class="new__line"></div>
+          <h4 class="new__title">{{ new.name }}</h4>
+          <h6 class="new__time">{{ new.date }}</h6>
+          <img class="new__img" src="{{ new.img.url }}" alt="" />
+          <p class="new__info"><span class="new__info__brackets">"</span>
+            {{ new.info|safe }}
+          <span class="new__info__brackets">"</span></p>
+        </div>
+        {% endfor %}
+
+        <div class="new__line"></div>
+      </div>
+      <br />
+      <br />
+    </main>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block title %}Студенты{% endblock %}
+{% block content %}
+
+{% load static %}
+    <main>
+      <div class="wrapper">
+        <h1 class="title">Студенты</h1>
+        <div class="new__line"></div>
+
+        <div class="students">
+          <!-- --------------------------- -->
+          <div class="students__row">
+            {% for student in line1 %}
+
+            <div class="students__card">
+              <img
+                class="students__card__img"
+                src="{{ student.img.url }}"
+                alt=""
+              />
+              <p class="students__card__name">{{ student.name }}</p>
+            </div>
+            {% endfor %}
+
+          </div>
+          <!-- --------------------------- -->
+
+          <div class="students__row">
+
+            {% for student in line2 %}
+
+            <div class="students__card">
+              <img
+                class="students__card__img"
+                src="{{ student.img.url }}"
+                alt=""
+              />
+              <p class="students__card__name">{{ student.name }}</p>
+            </div>
+            {% endfor %}
+
+
+          </div>
+          <!-- --------------------------- -->
+          <div class="students__row">
+            {% for student in line3 %}
+
+            <div class="students__card">
+              <img
+                class="students__card__img"
+                src="{{ student.img.url }}"
+                alt=""
+              />
+              <p class="students__card__name">{{ student.name }}</p>
+            </div>
+            {% endfor %}
+
+          </div>
+          <!-- --------------------------- -->
+          <div class="students__row">
+            {% for student in line4 %}
+
+            <div class="students__card">
+              <img
+                class="students__card__img"
+                src="{{ student.img.url }}"
+                alt=""
+              />
+              <p class="students__card__name">{{ student.name }}</p>
+            </div>
+            {% endfor %}
+
+          </div>
+          <!-- --------------------------- -->
+          <div class="students__row">
+            {% for student in line5 %}
+
+            <div class="students__card">
+              <img
+                class="students__card__img"
+                src="{{ student.img.url }}"
+                alt=""
+              />
+              <p class="students__card__name">{{ student.name }}</p>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+
+        <div class="new__line"></div>
+
+        <h1 class="title">Куратор</h1>
+
+                  <div class="kyr__row">
+            {% for student in linekyr %}
+
+            <div class="kyr__card">
+              <img
+                class="kyr__card__img"
+                src="{{ student.img.url }}"
+                alt=""
+              />
+              <p class="kyr__card__name">{{ student.name }}</p>
+            </div>
+            {% endfor %}
+
+          </div>
+        <div class="new__line"></div>
+      </div>
+      <br />
+      <br />
+    </main>
+{% endblock %}

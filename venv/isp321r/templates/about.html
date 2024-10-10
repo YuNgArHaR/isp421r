@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}О группе{% endblock %}
+{% block content %}
+
+{% load static %}
+    <main>
+      <div class="wrapper">
+        <h1 class="title">О группе</h1>
+        <div class="new__line"></div>
+        {% for img in about_img %}
+        <div class="slider">
+          <img
+            id="sliderImg"
+            class="slider__img"
+            src="{{ img.img1.url }}"
+          />
+          <img
+            id="sliderImg"
+            class="slider__img"
+            src="{{ img.img2.url }}"
+          />
+          <img
+            id="sliderImg"
+            class="slider__img"
+            src="{{ img.img3.url }}"
+          />
+        </div>
+        {% endfor %}
+        {% for info in about_info %}
+        <p class="info">
+          <span>{{ info.name }}</span> — {{ info.info }}
+        </p>
+        {% endfor %}
+      </div>
+      <div class="new__line"></div>
+      <br />
+      <br />
+    </main>
+{% endblock %}

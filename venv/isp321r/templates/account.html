@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Аккаунт{% endblock %}
+{% block content %}
+
+{% load static %}
+    <main>
+      <div class="wrapper">
+        <h1 class="title">Личный кабинет</h1>
+        {% if user.is_authenticated %}
+        <div class="new__line"></div>
+        <h3 class="add-new__title">Добавить новость</h3>
+
+        <form class="add-new" action="{% url 'account' %}" method="post" name="AddNew" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input
+            class="add-new__input"
+            name="name"
+            type="text"
+            placeholder="Заголовок новости"
+            maxlength="50"
+            required
+          />
+          <input
+            class="add-new__input"
+            name="date"
+            type="date"
+            placeholder="Дата"
+            required
+          />
+          <input
+            class="add-new__input"
+            name="img"
+            type="file"
+            placeholder="Фотография"
+            required
+          />
+          <textarea class="add-new__input-info" name="info" cols="30" rows="10" maxlength="1500" placeholder="Осн. информация" required></textarea>
+          <input class="add-new__btn" type="submit" name="AddNew" value="Добавить новость" />
+          <p class="warning">Перед добавлением новости прочитайте <a class="warning__link" href="https://t.me/isakycc">Правила добавления новости</a> </p>
+        </form>
+
+        <div class="new__line"></div>
+        <div class="logout-2">
+          <form method="post" action="{% url 'admin_logout' %}">
+                      {% csrf_token %}
+          <input class="logout" name="logout" type="submit" value="Выйти из аккаунта">
+          </form>
+                  {% else %}
+        {% endif %}
+
+        </div>
+      </div>
+
+      <br />
+      <br />
+    </main>
+{% endblock %}
